@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .hidden {
+                display: none;
+            }
+            #tacitko {
+                position: absolute;
+
+                aspect-ratio: auto;
+                top: 0;
+                left: 0;
+            }
+        </style>
+        <script>
+            let currentBackgroundColor = "white";
+
+            function swapcolor() {
+                // aktualizuj aktuální stav pozadí
+                if (currentBackgroundColor === "black") {
+                    currentBackgroundColor = "white";
+                } else {
+                    currentBackgroundColor = "black";
+                }
+
+                // nastav nové pozadí
+                document.body.style.backgroundColor = currentBackgroundColor;
+            }
+
+            function swapImages() {
+                var image1 = document.getElementById("image1");
+                var image2 = document.getElementById("image2");
+                var temp = image1.src;
+                image1.src = image2.src;
+                image2.src = temp;
+            }
+        </script>
+    </head>
+    <body>
+        <img
+            id="image1"
+            src="sun-2081062_1280.png"
+            alt="Image 1"
+            height="100px"
+        />
+        <img
+            id="image2"
+            class="hidden"
+            src="moon.png"
+            alt="Image 2"
+            height="100px"
+        />
+        <button id="tlacitko" onclick="swapImages();swapcolor()">klik</button>
+    </body>
+</html>
